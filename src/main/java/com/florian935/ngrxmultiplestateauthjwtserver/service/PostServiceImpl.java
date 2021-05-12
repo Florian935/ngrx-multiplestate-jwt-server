@@ -3,6 +3,7 @@ package com.florian935.ngrxmultiplestateauthjwtserver.service;
 import com.florian935.ngrxmultiplestateauthjwtserver.domain.Post;
 import com.florian935.ngrxmultiplestateauthjwtserver.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public Post insert(Post post) {
-        return postRepository.insert(post);
+        return postRepository.save(post);
     }
 
     public Optional<Post> update(String id, Post post) {
