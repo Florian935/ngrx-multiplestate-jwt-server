@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -30,5 +31,22 @@ public class PostController {
         final Post postSaved = postService.insert(post);
 
         return ResponseEntity.status(CREATED).body(postSaved);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable String id) {
+        postService.deleteById(id);
+
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> update(@PathVariable String id,
+                                    @RequestBody Post post) {
+        final Optional<Post> postUpdated = postService.update(id, post);
+
+        return postUpdated.isPresent()
+                ? ResponseEntity.status(CREATED).body(postUpdated.get())
+                : ResponseEntity.notFound().build();
     }
 }

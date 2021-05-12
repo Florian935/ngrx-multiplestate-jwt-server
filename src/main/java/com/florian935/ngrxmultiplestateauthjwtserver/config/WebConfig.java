@@ -23,6 +23,7 @@ public class WebConfig {
         configuration.setAllowedMethods(ALLOWED_METHODS);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
+
         return source;
     }
 }
