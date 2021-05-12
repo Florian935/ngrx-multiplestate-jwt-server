@@ -15,6 +15,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RestController
 @RequestMapping("/api/v1.0/posts")
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:4200")
 public class PostController {
 
     private final PostService postService;
