@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class AuthenticateResponse {
-    private String jwt;
+    private String token;
 }
