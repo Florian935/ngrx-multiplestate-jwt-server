@@ -1,9 +1,9 @@
-package com.florian935.ngrxmultiplestateauthjwtserver.service;
+package com.florian935.ngrxmultiplestateauthjwtserver.service.implementation;
 
 import com.florian935.ngrxmultiplestateauthjwtserver.domain.Post;
 import com.florian935.ngrxmultiplestateauthjwtserver.repository.PostRepository;
+import com.florian935.ngrxmultiplestateauthjwtserver.service.PostService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
